@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BDG TEST</title>
+</head>
+<body>
+
+
+<script>
+    function modifyTableCell(rowIndex, columnIndex, newText) {
+        var tableName = document.getElementById('table');
+        let previosValueName = tableName.rows[rowIndex].cells[columnIndex].innerText;
+        tableName.rows[rowIndex].cells[columnIndex].innerHTML = newText;
+        return previosValueName;
+    }
+
+    document.body.innerHTML = `
+<table id = "table">
+    <tbody>
+    <tr>
+        <td>Isla</td>
+        <td>Leo</td>
+        <td>Samuel</td>
+    </tr>
+    <tr>
+        <td>Mia</td>
+        <td>Evie</td>
+        <td>Freya</td>
+    </tr>
+    <tr>
+        <td>Olivia</td>
+        <td>Ava</td>
+        <td>George</td>
+    </tr>
+    </tbody>
+</table>`;
+
+    console.log(modifyTableCell(0, 0, "WILMER"));
+</script>
+</body>
+</html>
