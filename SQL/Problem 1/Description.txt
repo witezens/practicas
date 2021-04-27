@@ -1,0 +1,15 @@
+A project management tool keeps data in the following two tables:
+
+Table employees
+	id INTEGER NOT NULL PRIMARY KEY,
+	name VARCHAR(30) NOT NULL
+
+Table tasks
+	id INTEGER NOT NULL PRIMARY KEY,
+	authorId INTEGER NOT NULL REFERENCES employees (id),
+	assigneeId INTEGER REFERENCES employees (id)
+
+
+Write a query that selects task id, author name and assignee name for each task. If there is no assignee for
+a task, the query should return null instead of the assignee name
+
